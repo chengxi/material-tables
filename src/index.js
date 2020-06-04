@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-import App from './App';
+import './index.css';
+import App from './components/FVApp';
+import FVApp from './components/FVApp'
+import CssBaseline from "@material-ui/core/CssBaseline";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  
-    <App />
-  ,
+  <React.StrictMode>
+    <CssBaseline />
+    {/* <App /> */}
+    <FVApp />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

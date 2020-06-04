@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import './App.css'
+import '../App.css'
 import { TableCell, TableRow, Paper} from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -10,8 +10,8 @@ import TableHead from '@material-ui/core/TableHead';
 import Avatar from '@material-ui/core/Avatar';
 import MUIDataTable from "mui-datatables";
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
-import Fragment from 'react';
-import Dashboard from './Dashboard'
+// import Fragment from 'react';
+// import Dashboard from './Dashboard'
 
 const columns = [
  {
@@ -426,7 +426,7 @@ const DenseTable=(props)=>{
 }
 
 
-export default function App () {
+export default function Report () {
 
     return (
       <div style={{ maxWidth: "100%" }}>
@@ -444,7 +444,4 @@ export default function App () {
   
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
-
-// export default App;
+// export default withStyles(styles)(Report);

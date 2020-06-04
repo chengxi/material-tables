@@ -36,10 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.inlinepaper{
-  width: 1400px;
-  height: 300px;
-  /* margin: 20px; */
-  background-color: grey !important;
-}
