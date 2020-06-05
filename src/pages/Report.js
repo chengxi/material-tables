@@ -13,6 +13,11 @@ import AvatarGroup from '@material-ui/lab/AvatarGroup';
 // import Fragment from 'react';
 // import Dashboard from './Dashboard'
 
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+
+
 const columns = [
  {
   name:  "Field Name\nClient/ Farm",
@@ -425,21 +430,45 @@ const DenseTable=(props)=>{
   );
 }
 
+var contentdata = "<h2>Title: Worms in southeast corner of field XYZ</h2><p>Tag: worm&nbsp;</p><p>Note <comment id=\"b39dd790\" type=\"start\"></comment>awesome<comment id=\"b39dd790\" type=\"end\"></comment>1234, abc</p><p>Image:</p><figure class=\"image\"><img src=\"https://s3-us-west-2.amazonaws.com/climate-com/images/products/edit-prescription.png\"></figure>"
 
 export default function Report () {
 
     return (
-      <div style={{ maxWidth: "100%" }}>
-      {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
-      <h1>Report 1234</h1>
-            <MUIDataTable
-                title={"Planting by Field"}
-                data={data}
-                columns={columns}
-                options={options}
-            />
-      {/* <Dashboard /> */}
-      </div>
+      <>
+        <div style={{ maxWidth: "100%" }}>
+        {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
+        <h1>Report 1234</h1>
+              <MUIDataTable
+                  title={"Planting by Field"}
+                  data={data}
+                  columns={columns}
+                  options={options}
+              />
+        {/* <Dashboard /> */}
+        </div>
+        <h1>Scouting Report with pre-populated notes</h1>
+        <CKEditor
+        editor={ ClassicEditor }
+        data = {contentdata}
+        onInit={ editor => {
+            // You can store the "editor" and use when it is needed.
+            console.log( 'Editor is ready to use!', editor );
+        } }
+        onChange={ ( event, editor ) => {
+            const data = editor.getData();
+            console.log( { event, editor, data } );
+        } }
+        onBlur={ ( event, editor ) => {
+            console.log( 'Blur.', editor );
+        } }
+        onFocus={ ( event, editor ) => {
+            console.log( 'Focus.', editor );
+        } }
+        />
+      </>
+      
+
     );
   
 }
